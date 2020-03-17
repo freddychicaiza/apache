@@ -33,9 +33,18 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: ClusterIP
-  port: 80
-  nodePortNumber: 31668
+  enabled: true
+  type: NodePort
+  ports:
+    app:
+      port: 80
+      targetPort: 80
+      protocol: TCP
+
+#service:
+#  type: ClusterIP
+#  port: 80
+#  nodePortNumber: 31668
 
 ingress:
   enabled: false
