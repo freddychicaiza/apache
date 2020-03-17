@@ -33,13 +33,10 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  enabled: true
-  type: NodePort
-  ports:
-    app:
-      port: 80
-      targetPort: 80
-      protocol: TCP
+  name: testhttpd
+  type: ClusterIP
+  externalPort: 31668
+  internalPort: 80
 
 #service:
 #  type: ClusterIP
