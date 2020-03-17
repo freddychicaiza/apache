@@ -11,6 +11,6 @@ spec:
       targetPort: http
       protocol: TCP
       name: http
-      nodePort: 31668
+      nodePort: {{ .Values.service.nodePortNumber }}
   selector:
     {{- include "mychart.selectorLabels" . | nindent 4 }}
